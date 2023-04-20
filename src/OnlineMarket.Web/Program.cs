@@ -1,10 +1,14 @@
 using Microsoft.EntityFrameworkCore;
 using OnlineMarket.DataAccess.Context;
+using OnlineMarket.DataAccess.IRepositories;
+using OnlineMarket.DataAccess.Repositories;
+using OnlineMarket.Domain.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IGenericRepository<Product>, GenericRepository<Product>>();
 
 builder.Services.AddDbContext<OnlineMarketDbContext>(option =>
 option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
