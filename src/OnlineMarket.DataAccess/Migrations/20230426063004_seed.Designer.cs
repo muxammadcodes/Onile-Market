@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OnlineMarket.DataAccess.Context;
 
@@ -11,9 +12,10 @@ using OnlineMarket.DataAccess.Context;
 namespace OnlineMarket.DataAccess.Migrations
 {
     [DbContext(typeof(OnlineMarketDbContext))]
-    partial class OnlineMarketDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230426063004_seed")]
+    partial class seed
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
