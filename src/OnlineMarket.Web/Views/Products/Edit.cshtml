@@ -1,0 +1,69 @@
+﻿@using OnlineMarket.Service.DTOs;
+
+@{
+    ViewData["Title"] = "Edit";
+
+}
+@model ProductForResultDto
+
+<h1>@ViewData["Title"]</h1>
+
+<style>
+    h1 {
+        text-align: center;
+        color: darkred;
+    }
+
+    #input {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .btn-custom {
+        background-color: darkred;
+        color: orangered;
+    }
+
+    .card-footer {
+        text-align: center;
+    }
+
+</style>
+
+<hr />
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form asp-action="Edit" class="card shadow">
+                <div asp-validation-summary="ModelOnly" class="card-header text-danger"></div>
+                <div class="card-body bg-light">
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label">New Product Name:</label>
+                        <input asp-for="Name" class="form-control bg-white shadow-sm" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Count" class="control-label">New Product Count:</label>
+                        <input asp-for="Count" class="form-control bg-white shadow-sm" type="number" />
+                        <span asp-validation-for="Count" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Price" class="control-label">New Product Price:</label>
+                        <input asp-for="Price" class="form-control bg-white shadow-sm" type="number" inputmode="decimal" step="0.01" />
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Description" class="control-label">New Product Description:</label>
+                        <input asp-for="Description" class="form-control bg-white shadow-sm" />
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <input type="submit" value="Edit" class="btn btn-success" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<p id="input"><a asp-action="Index" class="btn btn-custom">Main Page</a></p>

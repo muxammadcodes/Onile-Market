@@ -1,0 +1,49 @@
+﻿@using OnlineMarket.Service.DTOs;
+@model ProductForResultDto;
+
+@{
+    ViewData["Title"] = "Delete page";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <h4>User</h4>
+    <hr />
+
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(p => p.Name)
+        </dt>
+        <dd class="col-sm-2">
+            @Html.DisplayFor(p => p.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(p => p.Count)
+        </dt>
+        <dd class="col-sm-2">
+            @Html.DisplayFor(p => p.Count)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(p => p.Price)
+        </dt>
+        <dd class="col-sm-2">
+            @Html.DisplayFor(p => p.Price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(p => p.Description)
+        </dt>
+        <dd class="col-sm-2">
+            @Html.DisplayFor(p => p.Description)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-outline-danger" />
+        <a asp-action="Index" class="btn btn-outline-success">Back to main menu</a>
+    </form>
+
+</div>
