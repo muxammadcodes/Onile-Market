@@ -10,9 +10,9 @@ namespace OnlineMarket.Service.Interfaces
     public interface IProductService
     {
         public Task<ProductForResultDto> AddAsync(ProductCreationDto dto);
-        public Task<ProductForResultDto> UpdateAsync(ProductForResultDto dto);
+        public Task<ProductForResultDto> UpdateAsync(int id,ProductForResultDto dto);
         public Task<bool> DeleteAsync(int id);
-        public Task<ProductForResultDto> RetrievAsync(int id);
-        public Task<IEnumerable<ProductForResultDto>> GetAllAsync();
+        public Task<ProductForResultDto> RetrievByIdAsync(int id);
+        public Task<IEnumerable<ProductForResultDto>> RetrievAllAsync();
     }
 }

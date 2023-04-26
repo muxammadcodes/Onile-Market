@@ -42,7 +42,7 @@ namespace OnlineMarket.DataAccess.Repositories
 
         public async ValueTask SaveAsync()
         {
-            await this.dbSet.SingleOrDefaultAsync();
+            await this.dbContext.SaveChangesAsync();
         }
 
         public async ValueTask<TEntity> UpdateAsync(TEntity entity)

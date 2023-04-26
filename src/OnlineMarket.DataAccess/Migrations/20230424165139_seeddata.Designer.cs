@@ -12,8 +12,8 @@ using OnlineMarket.DataAccess.Context;
 namespace OnlineMarket.DataAccess.Migrations
 {
     [DbContext(typeof(OnlineMarketDbContext))]
-    [Migration("20230420092924_seconfMigration")]
-    partial class seconfMigration
+    [Migration("20230424165139_seeddata")]
+    partial class seeddata
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -61,7 +61,7 @@ namespace OnlineMarket.DataAccess.Migrations
                         {
                             Id = 1,
                             Count = 10,
-                            CreatedAt = new DateTime(2023, 4, 20, 9, 29, 24, 564, DateTimeKind.Utc).AddTicks(5911),
+                            CreatedAt = new DateTime(2023, 4, 24, 16, 51, 38, 882, DateTimeKind.Utc).AddTicks(3054),
                             Description = "A high-end smartphone with 6.7-inch Super Retina XDR display and 5G connectivity.",
                             Name = "Apple iPhone 13 Pro Max",
                             Price = 1099.99m
@@ -70,7 +70,7 @@ namespace OnlineMarket.DataAccess.Migrations
                         {
                             Id = 2,
                             Count = 5,
-                            CreatedAt = new DateTime(2023, 4, 20, 9, 29, 24, 564, DateTimeKind.Utc).AddTicks(5915),
+                            CreatedAt = new DateTime(2023, 4, 24, 16, 51, 38, 882, DateTimeKind.Utc).AddTicks(3059),
                             Description = "A mid-range smartphone with 6.2-inch Dynamic AMOLED display and 5G connectivity.",
                             Name = "Samsung Galaxy S21",
                             Price = 799.99m
@@ -79,7 +79,7 @@ namespace OnlineMarket.DataAccess.Migrations
                         {
                             Id = 3,
                             Count = 2,
-                            CreatedAt = new DateTime(2023, 4, 20, 9, 29, 24, 564, DateTimeKind.Utc).AddTicks(5916),
+                            CreatedAt = new DateTime(2023, 4, 24, 16, 51, 38, 882, DateTimeKind.Utc).AddTicks(3061),
                             Description = "A foldable smartphone with 6.2-inch Flex View OLED display and 5G connectivity.",
                             Name = "Motorola Razr 5G",
                             Price = 1399.99m
@@ -88,7 +88,7 @@ namespace OnlineMarket.DataAccess.Migrations
                         {
                             Id = 4,
                             Count = 15,
-                            CreatedAt = new DateTime(2023, 4, 20, 9, 29, 24, 564, DateTimeKind.Utc).AddTicks(5917),
+                            CreatedAt = new DateTime(2023, 4, 24, 16, 51, 38, 882, DateTimeKind.Utc).AddTicks(3062),
                             Description = "A budget smartphone with 6.5-inch IPS LCD display and 4G connectivity.",
                             Name = "Xiaomi Redmi 10",
                             Price = 179.99m
@@ -97,7 +97,7 @@ namespace OnlineMarket.DataAccess.Migrations
                         {
                             Id = 5,
                             Count = 7,
-                            CreatedAt = new DateTime(2023, 4, 20, 9, 29, 24, 564, DateTimeKind.Utc).AddTicks(5918),
+                            CreatedAt = new DateTime(2023, 4, 24, 16, 51, 38, 882, DateTimeKind.Utc).AddTicks(3064),
                             Description = "A high-end smartphone with 6.7-inch Fluid AMOLED display and 5G connectivity.",
                             Name = "OnePlus 9 Pro",
                             Price = 899.99m

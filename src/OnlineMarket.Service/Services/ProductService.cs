@@ -23,7 +23,7 @@ namespace OnlineMarket.Service.Services
             if (product is not null)
             {
                 var mapped = this.mapper.Map<ProductForResultDto>(dto);
-                await this.UpdateAsync(mapped);
+                await this.UpdateAsync(mapped.Id, mapped);
             }
 
             var mappedProduct = this.mapper.Map<Product>(dto);
@@ -64,16 +64,19 @@ namespace OnlineMarket.Service.Services
             return this.mapper.Map<ProductForResultDto>(product);
         }
 
-        public async Task<ProductForResultDto> UpdateAsync(ProductForResultDto dto)
+        public async Task<ProductForResultDto> UpdateAsync(int id,ProductForResultDto dto)
         {
-            var product = await this.repository.GetAsync(p => p.Id == dto.Id);
+            var product = await this.repository.GetAsync(p => p.Id == id);
             if (product is null)
                 throw new CustomException(404, "Product is not found for given id");
 
             var mapped = this.mapper.Map(dto, product);
+            mapped.UpdatedAt = DateTime.UtcNow;
+
+            var result = await this.repository.UpdateAsync(mapped);
             await this.repository.SaveAsync();
 
-            return this.mapper.Map<ProductForResultDto>(mapped);
+            return this.mapper.Map<ProductForResultDto>(result);
         }
     }
 }

@@ -7,6 +7,36 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/OnlineMarket.Web.styles.css" asp-append-version="true" />
+
+
+    <style>
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+            .button-container button {
+                background-color: #007bff;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+                transition: background-color 0.2s ease-in-out;
+                margin-right: 10px;
+            }
+
+                .button-container button:last-child {
+                    margin-right: 0;
+                }
+
+                .button-container button:hover {
+                    background-color: #0062cc;
+                }
+    </style>
+
 </head>
 <body>
     <header>
@@ -30,6 +60,7 @@
             </div>
         </nav>
     </header>
+   
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

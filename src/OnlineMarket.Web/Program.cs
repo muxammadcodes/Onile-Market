@@ -3,15 +3,21 @@ using OnlineMarket.DataAccess.Context;
 using OnlineMarket.DataAccess.IRepositories;
 using OnlineMarket.DataAccess.Repositories;
 using OnlineMarket.Domain.Entities;
+using OnlineMarket.Service.Interfaces;
+using OnlineMarket.Service.Mappers;
+using OnlineMarket.Service.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IGenericRepository<Product>, GenericRepository<Product>>();
+builder.Services.AddScoped<IProductService, ProductService>();
 
 builder.Services.AddDbContext<OnlineMarketDbContext>(option =>
 option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddAutoMapper(typeof(MapperProfile));
 
 var app = builder.Build();
 
