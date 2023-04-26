@@ -8,7 +8,8 @@ namespace OnlineMarket.Service.Mappers
     {
         public MapperProfile()
         {
-            CreateMap<Product,ProductForResultDto>
+            CreateMap<Product,ProductForResultDto>().ReverseMap();
+            CreateMap<Product,ProductCreationDto>().ReverseMap();
         }
     }
 }

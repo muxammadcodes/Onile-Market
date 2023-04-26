@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OnlineMarket.Service.DTOs
+﻿namespace OnlineMarket.Service.DTOs
 {
-    internal class ProductForResultDto
+    public class ProductForResultDto
     {
+        public int Id { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public int Count { get; set; }
+        public decimal Price { get; set; }
+        public string Description { get; set; } = string.Empty;
     }
 }

@@ -1,0 +1,64 @@
+﻿@using OnlineMarket.Service.DTOs;
+@model ProductForResultDto
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details Page</h1>
+
+<style>
+    #buttons {
+        border: 4px solid #ccc;
+        border-radius: 4px;
+        padding: 10px 20px;
+        margin-top: 5px;
+    }
+
+    #Informations {
+        border: 4px solid #ccc;
+        border-radius: 4px;
+        padding: 10px 20px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+</style>
+
+<div id="Informations">
+    <h3>User</h3>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Count)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Count)
+        </dd>
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+    </dl>
+</div>
+<div id="buttons">
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-outline-primary">Edit</a> |
+    <a asp-action="Index" class="btn btn-outline-success">Back</a>
+</div>
